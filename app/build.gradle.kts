@@ -12,13 +12,17 @@ plugins {
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
     id("com.google.devtools.ksp")
-    id("io.realm.kotlin")
+    id("io.realm.kotlin") apply true
 }
 
 val prop = Properties().apply {
     load(FileInputStream(File(rootProject.rootDir, "apiKeys.properties")))
 }
 val baseUrl: String = prop.getProperty("BASE_URL") ?: ""
+val ixStorePassword: String = prop.getProperty("STORE_PASSWORD")
+val ixKeyPassword: String = prop.getProperty("KEY_PASSWORD")
+val ixKeyAlias: String = prop.getProperty("KEY_ALIAS")
+val ixKeystorePath: String = prop.getProperty("KEYSTORE_PATH")
 
 android {
     namespace = "com.ix.diary"
@@ -48,6 +52,14 @@ android {
         debug {
             buildConfigField("String", "baseUrl", "\"$baseUrl\"")
             versionNameSuffix = "debug"
+        }
+    }
+    signingConfigs {
+        all {
+            storePassword = ixStorePassword
+            keyPassword = ixKeyPassword
+            keyAlias = ixKeyAlias
+            storeFile = file(ixKeystorePath)
         }
     }
     compileOptions {
@@ -112,7 +124,6 @@ dependencies {
     // Room
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
-    annotationProcessor("androidx.room:room-compiler:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
 
     // DataStore

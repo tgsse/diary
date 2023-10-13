@@ -1,6 +1,10 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    repositories {
+        mavenCentral()
+    }
     dependencies {
+        classpath("io.realm:realm-gradle-plugin:10.11.1")
         classpath("com.google.gms:google-services:4.4.0")
     }
 }
