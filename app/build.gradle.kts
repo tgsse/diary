@@ -19,6 +19,8 @@ val prop = Properties().apply {
     load(FileInputStream(File(rootProject.rootDir, "apiKeys.properties")))
 }
 val baseUrl: String = prop.getProperty("BASE_URL") ?: ""
+val oauthWebClientId: String = prop.getProperty("OAUTH-WEB-CLIENT-ID") ?: ""
+val mongoServiceId: String = prop.getProperty("MONGO_SERVICE_ID") ?: ""
 val ixStorePassword: String = prop.getProperty("STORE_PASSWORD")
 val ixKeyPassword: String = prop.getProperty("KEY_PASSWORD")
 val ixKeyAlias: String = prop.getProperty("KEY_ALIAS")
@@ -41,17 +43,40 @@ android {
         }
     }
 
+
     buildTypes {
         release {
+            buildConfigField("String", "baseUrl", "\"$baseUrl\"")
+            buildConfigField("String", "oauthWebClientId", "\"$oauthWebClientId\"")
+            buildConfigField("String", "mongoServiceId", "\"$mongoServiceId\"")
+
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
+            signingConfigs {
+                all {
+                    storePassword = ixStorePassword
+                    keyPassword = ixKeyPassword
+                    keyAlias = ixKeyAlias
+                    storeFile = file(ixKeystorePath)
+                }
+            }
         }
         debug {
             buildConfigField("String", "baseUrl", "\"$baseUrl\"")
+            buildConfigField("String", "oauthWebClientId", "\"$oauthWebClientId\"")
+            buildConfigField("String", "mongoServiceId", "\"$mongoServiceId\"")
             versionNameSuffix = "debug"
+            signingConfigs {
+                all {
+                    storePassword = ixStorePassword
+                    keyPassword = ixKeyPassword
+                    keyAlias = ixKeyAlias
+                    storeFile = file(ixKeystorePath)
+                }
+            }
         }
     }
     signingConfigs {
@@ -62,6 +87,20 @@ android {
             storeFile = file(ixKeystorePath)
         }
     }
+//    signingConfigs {
+//        debug {
+//            storePassword = ixStorePassword
+//            keyPassword = ixKeyPassword
+//            keyAlias = ixKeyAlias
+//            storeFile = file(ixKeystorePath)
+//        }
+//        create("release") {
+//            storePassword = ixStorePassword
+//            keyPassword = ixKeyPassword
+//            keyAlias = ixKeyAlias
+//            storeFile = file(ixKeystorePath)
+//        }
+//    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

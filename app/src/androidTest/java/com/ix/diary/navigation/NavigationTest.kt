@@ -49,7 +49,7 @@ class NavigationTest {
     @Test
     fun navHost_verifyStartDestination() {
         composeTestRule
-            .onNodeWithContentDescription(context.getString(R.string.label_screen_1))
+            .onNodeWithContentDescription(context.getString(R.string.label_authentication_screen))
             .assertIsDisplayed()
     }
 }

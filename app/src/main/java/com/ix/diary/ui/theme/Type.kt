@@ -2,33 +2,64 @@ package com.ix.diary.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+import com.ix.diary.R
+
+object Fonts {
+    val body = FontFamily(Font(R.font.lora))
+    val title = FontFamily(Font(R.font.montserrat))
+}
 
 // Set of Material typography styles to start with
 val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp,
+    displayLarge = TextStyle(
+        fontFamily = Fonts.title,
     ),
-    /* Other default text styles to override
+    displayMedium = TextStyle(
+        fontFamily = Fonts.title,
+    ),
+    displaySmall = TextStyle(
+        fontFamily = Fonts.title,
+    ),
+
+    headlineLarge = TextStyle(
+        fontFamily = Fonts.title,
+    ),
+    headlineMedium = TextStyle(
+        fontFamily = Fonts.title,
+    ),
+    headlineSmall = TextStyle(
+        fontFamily = Fonts.title,
+    ),
+
     titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
+        fontFamily = Fonts.title,
+    ),
+    titleMedium = TextStyle(
+        fontFamily = Fonts.title,
+    ),
+    titleSmall = TextStyle(
+        fontFamily = Fonts.title,
+    ),
+
+    bodyLarge = TextStyle(
+        fontFamily = Fonts.body,
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = Fonts.body,
+    ),
+    bodySmall = TextStyle(
+        fontFamily = Fonts.body,
+    ),
+
+    labelLarge = TextStyle(
+        fontFamily = Fonts.title,
+    ),
+    labelMedium = TextStyle(
+        fontFamily = Fonts.title,
     ),
     labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    )
-    */
+        fontFamily = Fonts.title,
+    ),
 )

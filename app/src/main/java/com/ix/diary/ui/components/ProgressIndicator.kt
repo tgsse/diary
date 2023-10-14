@@ -22,7 +22,7 @@ fun ProgressIndicator() {
             .semantics {
                 contentDescription = contentDesc
             },
-        color = MaterialTheme.colorScheme.surfaceVariant,
+        color = MaterialTheme.colorScheme.primary,
         trackColor = MaterialTheme.colorScheme.secondary,
     )
 }
