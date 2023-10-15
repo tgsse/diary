@@ -22,6 +22,6 @@ object TestAppModule {
     fun injectInMemoryRoom(@ApplicationContext context: Context) = Room
         .inMemoryDatabaseBuilder(
             context = context,
-            klass = FeatureDatabase::class.java,
+            klass = com.ix.diary.data.feature.local.FeatureDatabase::class.java,
         ).build()
 }

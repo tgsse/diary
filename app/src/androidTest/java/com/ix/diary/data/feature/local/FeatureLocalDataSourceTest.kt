@@ -27,9 +27,9 @@ class FeatureLocalDataSourceTest {
 
     @Inject
     @Named(testDbName)
-    lateinit var featureDatabase: FeatureDatabase
+    lateinit var featureDatabase: com.ix.diary.data.feature.local.FeatureDatabase
 
-    private lateinit var featureDao: FeatureDao
+    private lateinit var featureDao: com.ix.diary.data.feature.local.FeatureDao
 
     @Before
     fun setup() {

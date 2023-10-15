@@ -7,9 +7,9 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.ix.diary.ui.screens.auth.AuthenticationScreen
-import com.ix.diary.ui.screens.diary.DiaryScreen
-import com.ix.diary.ui.screens.entry.EntryScreen
+import com.ix.ui.screens.auth.AuthenticationScreen
+import com.ix.ui.screens.diary.DiaryScreen
+import com.ix.ui.screens.entry.EntryScreen
 
 @Composable
 fun NavigationHost(

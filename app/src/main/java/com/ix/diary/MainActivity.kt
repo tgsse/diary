@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
 import com.ix.diary.navigation.NavigationHost
-import com.ix.diary.ui.theme.DiaryTheme
+import com.ix.ui.theme.DiaryTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

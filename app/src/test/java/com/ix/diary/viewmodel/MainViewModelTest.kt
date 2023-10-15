@@ -32,16 +32,21 @@ class MainViewModelTest {
     val mainDispatcherRule = MainDispatcherRule()
 
     @MockK
-    private lateinit var remoteRepo: FeatureRemoteRepositoryI
+    private lateinit var remoteRepo: com.ix.diary.data.feature.remote.FeatureRemoteRepositoryI
 
     @MockK
-    private lateinit var localRepo: FeatureLocalRepositoryI
+    private lateinit var localRepo: com.ix.diary.data.feature.local.FeatureLocalRepositoryI
 
     private lateinit var viewModel: MainViewModel
 
     @Before
     fun setup() {
-        viewModel = MainViewModel(FeatureRepository(remoteRepo, localRepo))
+        viewModel = MainViewModel(
+            com.ix.diary.data.feature.FeatureRepository(
+                remoteRepo,
+                localRepo
+            )
+        )
     }
 
     @After

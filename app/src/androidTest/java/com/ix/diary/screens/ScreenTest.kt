@@ -10,7 +10,7 @@ import androidx.test.filters.MediumTest
 import androidx.test.platform.app.InstrumentationRegistry
 import com.ix.diary.MainActivity
 import com.ix.diary.navigation.NavigationHost
-import com.ix.diary.ui.theme.DiaryTheme
+import com.ix.ui.theme.DiaryTheme
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.ExperimentalCoroutinesApi

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_desc_loading">Loading</string>
+    <string name="content_desc_navigate_back">Navigate back</string>
+    <string name="error_default">An unexpected error occurred</string>
+    <string name="label_authentication_screen">Authentication</string>
+    <string name="label_diary_screen">Authentication</string>
+    <string name="label_entry_screen">Diary Entry</string>
+    <string name="content_desc_add_entry">Add new diary entry</string>
+</resources>

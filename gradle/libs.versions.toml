@@ -34,10 +34,14 @@ messageBarCompose = "1.0.5"
 lifecycleRuntimeCompose = "2.7.0-alpha02"
 oneTapCompose = "1.0.0"
 playServicesAuth = "20.7.0"
+realmGradlePlugin = "10.11.1"
 retrofit = "2.9.0"
 roomVersion = "2.5.2"
 retrofit2KotlinxSerializationConverter = "1.0.0"
 timber = "5.0.1"
+agp = "8.1.2"
+org-jetbrains-kotlin-android = "1.8.10"
+material = "1.10.0"
 
 [libraries]
 accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanistPager" }
@@ -79,6 +83,20 @@ mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 oneTapCompose = { module = "com.github.stevdza-san:OneTapCompose", version.ref = "oneTapCompose" }
 messageBarCompose = { module = "com.github.stevdza-san:MessageBarCompose", version.ref = "messageBarCompose" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+realm-gradle-plugin = { module = "io.realm:realm-gradle-plugin", version.ref = "realmGradlePlugin" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2KotlinxSerializationConverter" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+ui = { group = "androidx.compose.ui", name = "ui" }
+ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+material3 = { group = "androidx.compose.material3", name = "material3" }
+play-services-base = { group = "com.google.android.gms", name = "play-services-base", version = "18.2.0" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+[plugins]
+com-android-application = { id = "com.android.application", version.ref = "agp" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+com-android-library = { id = "com.android.library", version.ref = "agp" }

@@ -1,6 +1,3 @@
-import java.io.FileInputStream
-import java.util.Properties
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -15,16 +12,7 @@ plugins {
     id("io.realm.kotlin") apply true
 }
 
-val prop = Properties().apply {
-    load(FileInputStream(File(rootProject.rootDir, "apiKeys.properties")))
-}
-val baseUrl: String = prop.getProperty("BASE_URL") ?: ""
-val oauthWebClientId: String = prop.getProperty("OAUTH-WEB-CLIENT-ID") ?: ""
-val mongoServiceId: String = prop.getProperty("MONGO_SERVICE_ID") ?: ""
-val ixStorePassword: String = prop.getProperty("STORE_PASSWORD")
-val ixKeyPassword: String = prop.getProperty("KEY_PASSWORD")
-val ixKeyAlias: String = prop.getProperty("KEY_ALIAS")
-val ixKeystorePath: String = prop.getProperty("KEYSTORE_PATH")
+val secrets = Secrets()
 
 android {
     namespace = "com.ix.diary"
@@ -46,9 +34,6 @@ android {
 
     buildTypes {
         release {
-            buildConfigField("String", "baseUrl", "\"$baseUrl\"")
-            buildConfigField("String", "oauthWebClientId", "\"$oauthWebClientId\"")
-            buildConfigField("String", "mongoServiceId", "\"$mongoServiceId\"")
 
             isMinifyEnabled = false
             proguardFiles(
@@ -57,34 +42,33 @@ android {
             )
             signingConfigs {
                 all {
-                    storePassword = ixStorePassword
-                    keyPassword = ixKeyPassword
-                    keyAlias = ixKeyAlias
-                    storeFile = file(ixKeystorePath)
+                    storePassword = secrets.ixStorePassword
+                    keyPassword = secrets.ixKeyPassword
+                    keyAlias = secrets.ixKeyAlias
+                    storeFile = file(secrets.ixKeystorePath)
                 }
             }
         }
         debug {
-            buildConfigField("String", "baseUrl", "\"$baseUrl\"")
-            buildConfigField("String", "oauthWebClientId", "\"$oauthWebClientId\"")
-            buildConfigField("String", "mongoServiceId", "\"$mongoServiceId\"")
+            buildConfigField("String", "oauthWebClientId", "\"${secrets.oauthWebClientId}\"")
+            buildConfigField("String", "mongoServiceId", "\"${secrets.mongoServiceId}\"")
             versionNameSuffix = "debug"
             signingConfigs {
                 all {
-                    storePassword = ixStorePassword
-                    keyPassword = ixKeyPassword
-                    keyAlias = ixKeyAlias
-                    storeFile = file(ixKeystorePath)
+                    storePassword = secrets.ixStorePassword
+                    keyPassword = secrets.ixKeyPassword
+                    keyAlias = secrets.ixKeyAlias
+                    storeFile = file(secrets.ixKeystorePath)
                 }
             }
         }
     }
     signingConfigs {
         all {
-            storePassword = ixStorePassword
-            keyPassword = ixKeyPassword
-            keyAlias = ixKeyAlias
-            storeFile = file(ixKeystorePath)
+            storePassword = secrets.ixStorePassword
+            keyPassword = secrets.ixKeyPassword
+            keyAlias = secrets.ixKeyAlias
+            storeFile = file(secrets.ixKeystorePath)
         }
     }
 //    signingConfigs {
@@ -106,14 +90,14 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = ProjectConfig.jvmTarget
     }
     buildFeatures {
         compose = true
         buildConfig = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = ProjectConfig.extensionVersion
     }
     packaging {
         resources {
@@ -220,6 +204,8 @@ dependencies {
     testImplementation(libs.mockk)
     testImplementation(libs.mockk.android)
     androidTestImplementation(libs.mockk.mockk.android)
+
+    implementation(project(":feature:authentication"))
 }
 
 kapt {

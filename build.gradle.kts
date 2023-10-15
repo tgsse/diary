@@ -4,8 +4,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("io.realm:realm-gradle-plugin:10.11.1")
-        classpath("com.google.gms:google-services:4.4.0")
+        classpath(libs.realm.gradle.plugin)
+//        classpath("com.google.gms:google-services:4.4.0")
     }
 }
 
@@ -16,4 +16,6 @@ plugins {
     id("com.google.dagger.hilt.android") version "2.48" apply false
     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
     id("io.realm.kotlin") version "1.11.0" apply false
+    id("com.google.gms.google-services") version "4.4.0" apply false
+    alias(libs.plugins.com.android.library) apply false
 }
