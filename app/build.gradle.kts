@@ -28,12 +28,12 @@ val ixKeystorePath: String = prop.getProperty("KEYSTORE_PATH")
 
 android {
     namespace = "com.ix.diary"
-    compileSdk = 34
+    compileSdk = ProjectConfig.compileSdk
 
     defaultConfig {
         applicationId = "com.ix.diary"
-        minSdk = 28
-        targetSdk = 34
+        minSdk = ProjectConfig.minSdk
+        targetSdk = ProjectConfig.targetSdk
         versionCode = 1
         versionName = "1.0"
 
