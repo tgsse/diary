@@ -1,0 +1,84 @@
+[versions]
+accompanistPager = "0.27.0"
+activity-compose = "1.8.0"
+androidx-junit = "1.1.5"
+appcompat = "1.6.1"
+composeBom = "2023.09.02"
+espressoCore = "3.5.1"
+desugar_jdk_libs = "2.0.3"
+datetime = "0.9.0"
+coreSplashscreen = "1.0.1"
+coilCompose = "2.4.0"
+datastorePreferences = "1.0.0"
+firebaseAuthKtx = "22.1.2"
+kotlinxCoroutinesTest = "1.7.3"
+junit = "4.13.2"
+google-hiltAndroidCompiler = "2.48"
+hiltAndroidTesting = "2.44"
+hiltNavigationCompose = "1.0.0"
+hiltAndroidCompiler = "2.48"
+hiltAndroid = "2.48"
+kotlinxCoroutinesCore = "1.7.3"
+firebaseStorageKtx = "20.2.1"
+kotlinxSerializationJson = "1.5.1"
+librarySync = "1.11.0"
+libraryBase = "1.11.0"
+lifecycle-runtime-ktx = "2.6.2"
+core-ktx = "1.12.0"
+navVersion = "2.7.4"
+loggingInterceptor = "4.11.0"
+mockk-mockkAndroid = "1.13.8"
+mockkAndroid = "1.13.8"
+mockk = "1.13.8"
+messageBarCompose = "1.0.5"
+lifecycleRuntimeCompose = "2.7.0-alpha02"
+oneTapCompose = "1.0.0"
+playServicesAuth = "20.7.0"
+retrofit = "2.9.0"
+roomVersion = "2.5.2"
+retrofit2KotlinxSerializationConverter = "1.0.0"
+timber = "5.0.1"
+
+[libraries]
+accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanistPager" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycleRuntimeCompose" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "navVersion" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navVersion" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomVersion" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVersion" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }
+desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
+datetime = { module = "io.github.vanpra.compose-material-dialogs:datetime", version.ref = "datetime" }
+dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "google-hiltAndroidCompiler" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
+junit = { module = "junit:junit", version.ref = "junit" }
+hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hiltAndroidTesting" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
+firebase-storage-ktx = { module = "com.google.firebase:firebase-storage-ktx", version.ref = "firebaseStorageKtx" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+library-sync = { module = "io.realm.kotlin:library-sync", version.ref = "librarySync" }
+library-base = { module = "io.realm.kotlin:library-base", version.ref = "libraryBase" }
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
+mockk-mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk-mockkAndroid" }
+mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockkAndroid" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+oneTapCompose = { module = "com.github.stevdza-san:OneTapCompose", version.ref = "oneTapCompose" }
+messageBarCompose = { module = "com.github.stevdza-san:MessageBarCompose", version.ref = "messageBarCompose" }
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2KotlinxSerializationConverter" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
